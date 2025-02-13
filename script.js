@@ -23,3 +23,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+function bacaMateri() {
+    let text = document.getElementById("materi").innerText; // Mengambil teks dari materi
+    let speech = new SpeechSynthesisUtterance(text); // Membuat objek suara
+    speech.lang = "id-ID"; // Mengatur bahasa menjadi Bahasa Indonesia
+    speech.rate = 1.0; // Kecepatan bicara (1.0 adalah normal)
+    speech.pitch = 1.0; // Nada suara
+    speech.volume = 1.0; // Volume suara (0.0 - 1.0)
+    
+    speechSynthesis.speak(speech); // Memulai pembacaan
+}
+
+// Fungsi untuk menghentikan suara
+function hentikanSuara() {
+    speechSynthesis.cancel(); // Menghentikan semua suara yang sedang berjalan
+}
+
