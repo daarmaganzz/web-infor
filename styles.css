@@ -1,0 +1,212 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+}
+
+/* Container utama */
+.container {
+    width: 100%; /* Pastikan container mengisi seluruh lebar layar */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Pastikan padding dihitung dalam lebar elemen */
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: relative;
+    width: 100%; /* Lebar penuh */
+    height: 250px;
+    background: url('planet.jpg') no-repeat center center/cover; /* Ganti dengan gambar header */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.header .title h1 {
+    font-size: 24px;
+}
+
+/* ===== SIDEBAR MENU ===== */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    color: white;
+    padding-top: 50px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.sidebar ul li:hover {
+    background: #444;
+}
+
+/* ===== BIO DATA (Hidden Awal) ===== */
+.hidden {
+    display: none;
+}
+
+#bio {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* ===== GRID KOTAK BAB ===== */
+.bab-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0; /* Menghapus padding */
+}
+
+/* Desktop: 2 kolom, Mobile: 3 kolom */
+@media (min-width: 768px) {
+    .bab-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di desktop */
+    }
+}
+
+@media (max-width: 767px) {
+    .bab-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom di mobile */
+    }
+}
+
+/* ===== KOTAK BAB ===== */
+.bab {
+    background: #d3d3d3; /* Warna abu-abu */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Tata letak ikon di atas teks */
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    width: 100%; /* Lebar penuh */
+}
+
+.bab:hover {
+    transform: scale(1.05);
+}
+
+.bab .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bab .content h3 {
+    font-size: 16px;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+/* ===== TUJUAN SECTION ===== */
+.tujuan-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tujuan-container h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.tujuan-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.tujuan-container ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.tujuan-container ul li {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* ===== DAFTAR BAB ===== */
+.daftar-bab h2 {
+    text-align: center; /* Menempatkan teks di tengah */
+    font-size: 32px; /* Ukuran font agak besar */
+    font-weight: bold; /* Membuat teks tebal */
+    margin-bottom: 30px; /* Memberikan jarak bawah agar tidak terlalu rapat */
+    color: #333; /* Warna teks */
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .bab-list {
+        grid-template-columns: repeat(1, 1fr); /* Satu kolom pada layar kecil */
+    }
+}
+
